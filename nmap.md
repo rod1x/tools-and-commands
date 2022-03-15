@@ -1,7 +1,7 @@
 # NMAP
 
 ## Basic and efective scan
-   sudo nmap -sS -sCV -Pn -p- 10.10.189.225 -oN nmap.txt
+    sudo nmap -sS -sCV -Pn -p- 10.10.189.225 -oN nmap.txt
 
 -sS    →  TCP SYN
 
@@ -16,9 +16,7 @@
 -oN    →  Save the ouput of the scan in a file
 
 ## SSH Brute Force credentials
-sudo nmap -p 22 --script ssh-brute --script-args userdb=users.txt,passdb=pass.txt \
-      --script-args ssh-brute.timeout=4s <target>
-
+    sudo nmap -p 22 --script ssh-brute --script-args userdb=users.txt,passdb=pass.txt \ --script-args ssh-brute.timeout=4s <target>
 
 ### Detecting Live Hosts
 Only Ip's
