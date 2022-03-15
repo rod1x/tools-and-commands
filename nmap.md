@@ -1,15 +1,23 @@
 # NMAP
 
 ## Basic and efective scan
-    nmap -sV -sC -p- 10.10.189.225 -oN nmap.txt
+   sudo nmap -sS -sCV -Pn -p- 10.10.189.225 -oN nmap.txt
+
+-sS    →  TCP SYN
 
 -sV    →  Probe open ports to determine service
 
 -sC    →  Scan using the default set of scripts
 
+-Pn    →  Treat all hosts as online -- skip host discovery
+
 -p-    →  Scan all ports
 
 -oN    →  Save the ouput of the scan in a file
+
+## SSH Brute Force credentials
+sudo nmap -p 22 --script ssh-brute --script-args userdb=users.txt,passdb=pass.txt \
+      --script-args ssh-brute.timeout=4s <target>
 
 
 ### Detecting Live Hosts
