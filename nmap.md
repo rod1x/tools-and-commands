@@ -18,59 +18,47 @@
 ## SSH Brute Force credentials
     nmap -p 22 --script ssh-brute --script-args userdb=username.txt,passdb=password.txt <target>
 
-### Detecting Live Hosts
-Only Ip's
+## Stealth Scan
 
-`nmap -sn -n $netw | grep for | cut -d" " -f5`
-
-### Stealth Scan
-
-`nmap -sS $ip`
+    nmap -sS <target>
 
 Only Open Ports and Banner Grab
 
-`nmap -n -Pn -sS $ip --open -sV`
+    nmap -n -Pn -sS <target> --open -sV
 
 Stealth scan using FIN Scan 
 
-`nmap -sF $ip`
+    nmap -sF <target>
 
-### Agressive scan
+## Agressive scan
 
 Without Ping scan, no dns resolution, show only open ports all and test All TCP Ports
 
-`nmap -n -Pn -sS -A $ip --open -p-`
+    nmap -n -Pn -sS -A <target> --open -p-
 
 Nmap verbose scan, runs syn stealth, T4 timing, OS and service version info, traceroute and scripts against services
 
-`nmap –v –sS –A –T4 $ip`
+    nmap –v –sS –A –T4 <target>
 
-### OS FigerPrint
+## OS FigerPrint
 
-`nmap -O $ip`
+    nmap -O <target>
 
-### Quick Scan
+## Quick Scan
 
-`nmap -T4 -F $netw`
+    nmap -T4 -F <target>
 
-### Quick Scan Plus
+## Quick Scan Plus
 
-`nmap -sV -T4 -O -F --version-light $netw`
+    nmap -sV -T4 -O -F --version-light <target>
 
-### output to a file
 
-`nmap -oN nameFile -p 1-65535 -sV -sS -A -T4 $ip`
+## Search NMAP scripts
 
-### output to a file Plus
+    ls /usr/share/nmap/scripts/ | grep ftp
 
-`nmap -oA nameFile -p 1-65535 -sV -sS -A -T4 $netw`
+## Enumerate ciphers
 
-### Search NMAP scripts
-
-`ls /usr/share/nmap/scripts/ | grep ftp`
-
-### Enumerate ciphers
-
-`nmap --script ssl-unum-ciphers -p 443 $ip`
+    nmap --script ssl-unum-ciphers -p 443 <target>
 
 
