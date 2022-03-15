@@ -1,7 +1,7 @@
 # NMAP
 
 ## Basic and efective scan
-    sudo nmap -sS -sCV -Pn -p- 10.10.189.225 -oN nmap.txt
+    sudo nmap -sS -sCV -Pn -p- <target> -oN nmap.txt
 
 -sS    →  TCP SYN
 
