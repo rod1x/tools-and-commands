@@ -16,7 +16,8 @@
 -oN    →  Save the ouput of the scan in a file
 
 ## SSH Brute Force credentials
-    sudo nmap -p 22 --script ssh-brute --script-args userdb=users.txt,passdb=pass.txt \ --script-args ssh-brute.timeout=4s <target>
+    sudo nmap -p 22 --script ssh-brute --script-args userdb=users.txt,passdb=pass.txt \
+    --script-args ssh-brute.timeout=4s <target>
 
 ### Detecting Live Hosts
 Only Ip's
